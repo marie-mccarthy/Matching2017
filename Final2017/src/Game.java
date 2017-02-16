@@ -29,7 +29,7 @@ public static void runGame()
 //		System.out.println(" ");
 //		System.out.println(" ");
 //		System.out.println(" ");
-		System.out.println("Pick cards with the same value.(Enter the coordinates. Example:(A1))");
+		System.out.println("Pick cards with the same value.(Enter the coordinates. Example:(21))");
 		for (Card v:Card.cardDeck);
 		Scanner userInput1 = new Scanner(System.in);
 		String firstCard= userInput1.nextLine();
@@ -78,12 +78,21 @@ public static void runGame()
 		column2 = Integer.parseInt(secondCard.substring(1)) -1;//-1
 		
 		System.out.println(Board.board[row1][column1].getName()+", is your first card and "+Board.board[row2][column2].getName()+" is your second card.");
-		
+		//set a to the name of the card so it prints
+		Board.board[row1][column1].setA(Board.board[row1][column1].getName());
+		Board.board[row2][column2].setA(Board.board[row2][column2].getName());
+Board.printBoard();
+
 		if(Board.board[row1][column1].getName().equals(Board.board[row2][column2].getName()));
 		{
-			System.out.println("You win.");
+			System.out.println("These are matching.");
+			//stillPlaying = false;
 		}
-		//else
+//		else
+//			{
+//				System.out.println("you loose");
+//			}
+//else
 //		{
 //			System.out.println("you loose");
 //		}
